@@ -1,6 +1,7 @@
 <template>
   <div class="hello" v-if="msg.aTestDataVar === 7">
     My First Hellow Word {{ msg.aTestDataVar === 7 ? 'Seven' : 'Not Seven' }}
+    <button v-on:click="$emit('parentAlert')"> Click Here</button>
     <ol>
       <li v-for="item in aList.aList" v-bind:key="item.text">
         {{ item.text }}

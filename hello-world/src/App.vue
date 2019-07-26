@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg={aTestDataVar} :aList={aList} />
+    <HelloWorld
+      :msg={aTestDataVar}
+      :aList={aList}
+      v-on:parentAlert="parentAlert"
+    />
   </div>
 </template>
 
@@ -12,6 +16,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods: {
+    parentAlert: () => {
+      alert('Alert On Parent: You Just Click a button inside child')
+    }
   },
   data: function () {
     return {
